@@ -3,8 +3,6 @@ from django.contrib.auth import get_user_model
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes.fields import GenericForeignKey
 
-print('Hello')
-
 User = get_user_model()
 
 # Create your models here.
