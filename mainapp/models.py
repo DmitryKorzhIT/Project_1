@@ -24,13 +24,16 @@ class User(models.Model):
 
     user_id = models.IntegerField(primary_key=True, verbose_name='User id', default=0)
     role = models.BooleanField(verbose_name='Admin')  # False:user, True:admin
-    name = models.CharField(max_length=255, verbose_name='Name')
+    name = models.CharField(max_length=255, verbose_name='Name', help_text='Please, enter your name.')
     email = models.CharField(max_length=255, verbose_name='Email')
     password = models.CharField(max_length=255, verbose_name='Password')
     # slug = models.SlugField(unique=True)
 
     def __str__(self):
         return self.name
+
+    # def get_absolute_url(self):
+    #     return reverse('model-detail-view', args=[str(self.user_id)])
 
 
 class Customer(models.Model):
